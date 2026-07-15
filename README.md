@@ -170,3 +170,48 @@ This project is licensed under the MIT License.
 ## ⭐ Acknowledgements
 
 This project was developed as part of an academic initiative to promote intelligent and sustainable agricultural practices using Machine Learning.
+
+
+## Overview
+
+An AI based crop recommendation system using Machine Learning.
+
+## Features
+
+- Soil based crop prediction
+- Machine learning classification
+- Flask web application
+- Random Forest model
+
+## Technologies Used
+
+- Python
+- Flask
+- Scikit-learn
+- Pandas
+- NumPy
+- HTML
+- CSS
+- JavaScript
+
+## Model Performance
+
+Random Forest achieved 99.54% accuracy on the crop recommendation dataset.
+
+## How It Works
+
+1. User enters soil and environmental parameters.
+2. Data is preprocessed using saved scaler.
+3. Machine learning model predicts the suitable crop.
+4. Result is displayed through the Flask web application.
+
+## Project Structure
+Smart-Agricultural-Production-Optimization-Engine
+│
+├── data
+├── models
+├── notebooks
+├── src
+├── static
+├── templates
+└── app.py
