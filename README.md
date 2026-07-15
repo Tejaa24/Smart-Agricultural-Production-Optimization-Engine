@@ -96,7 +96,7 @@ Smart-Agricultural-Production-Optimization-Engine/
 Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Smart-Agricultural-Production-Optimization-Engine.git
+git clone https://github.com/Tejaa24/Smart-Agricultural-Production-Optimization-Engine.git
 ```
 
 Move into the project folder
