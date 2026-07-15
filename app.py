@@ -2,14 +2,11 @@ from flask import Flask, render_template, request
 import joblib
 import numpy as np
 
-
 app = Flask(__name__)
 
-
-# Load ML files
 model = joblib.load("models/crop_model.pkl")
 scaler = joblib.load("models/scaler.pkl")
-label_encoder = joblib.load("models/label_encoder.pkl")
+encoder = joblib.load("models/label_encoder.pkl")
 
 
 @app.route("/")
@@ -21,34 +18,45 @@ def home():
 def predict():
 
     try:
-        N = float(request.form["N"])
-        P = float(request.form["P"])
-        K = float(request.form["K"])
-        temperature = float(request.form["temperature"])
-        humidity = float(request.form["humidity"])
-        ph = float(request.form["ph"])
-        rainfall = float(request.form["rainfall"])
+        data = [
+            float(request.form["N"]),
+            float(request.form["P"]),
+            float(request.form["K"]),
+            float(request.form["temperature"]),
+            float(request.form["humidity"]),
+            float(request.form["ph"]),
+            float(request.form["rainfall"])
+        ]
 
-        input_data = np.array(
-            [[N, P, K, temperature, humidity, ph, rainfall]]
-        )
+        values = np.array([data])
 
-        input_scaled = scaler.transform(input_data)
+        values = scaler.transform(values)
 
-        prediction = model.predict(input_scaled)
+        result = model.predict(values)
 
-        crop = label_encoder.inverse_transform(prediction)[0]
+        crop = encoder.inverse_transform(result)[0]
 
         return render_template(
             "result.html",
-            prediction=crop
+            crop=crop
         )
 
     except Exception as e:
+
         return render_template(
             "error.html",
             error=e
         )
+
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
 
 if __name__ == "__main__":

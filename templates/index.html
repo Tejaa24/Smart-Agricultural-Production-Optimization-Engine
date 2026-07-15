@@ -1,26 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Smart Agricultural Production Optimization Engine</title>
-<link rel="stylesheet" href="/static/css/style.css">
-</head>
-
-<body>
-
-<div class="container">
-
-<h1>🌱 Smart Agricultural Production Optimization Engine</h1>
-
-<p>Enter soil and environmental conditions to predict the best crop.</p>
+{% extends "base.html" %}
 
 
-<form action="/predict" method="POST">
+{% block content %}
 
-<input name="N" placeholder="Nitrogen (N)" required>
 
-<input name="P" placeholder="Phosphorus (P)" required>
+<div class="hero">
 
-<input name="K" placeholder="Potassium (K)" required>
+<h1>
+AI Based Crop Recommendation System
+</h1>
+
+
+<p>
+Optimize agricultural production using machine learning.
+</p>
+
+<form action="/predict" method="POST" onsubmit="return validateForm()"></form>
+
+<input name="N" placeholder="Nitrogen Level" required>
+
+<input name="P" placeholder="Phosphorus Level" required>
+
+<input name="K" placeholder="Potassium Level" required>
 
 <input name="temperature" placeholder="Temperature" required>
 
@@ -31,14 +32,15 @@
 <input name="rainfall" placeholder="Rainfall" required>
 
 
-<button type="submit">
-Predict Crop
+<button>
+Predict Best Crop
 </button>
 
 
 </form>
 
+
 </div>
 
-</body>
-</html>
+
+{% endblock %}
