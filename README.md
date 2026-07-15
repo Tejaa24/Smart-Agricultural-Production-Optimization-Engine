@@ -96,7 +96,7 @@ Smart-Agricultural-Production-Optimization-Engine/
 Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Smart-Agricultural-Production-Optimization-Engine.git
+git clone https://github.com/Tejaa24/Smart-Agricultural-Production-Optimization-Engine.git
 ```
 
 Move into the project folder
@@ -131,10 +131,14 @@ python app.py
 - Prediction
 
 ---
-
 ## 📸 Screenshots
 
-Screenshots will be added after development.
+Screenshots demonstrate the working Flask web application and crop prediction interface.
+
+The application provides:
+- User input interface for soil and climate parameters
+- Machine learning based crop recommendation
+- Prediction result display
 
 ---
 
