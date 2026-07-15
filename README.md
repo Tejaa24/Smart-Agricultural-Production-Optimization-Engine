@@ -215,3 +215,24 @@ Smart-Agricultural-Production-Optimization-Engine
 ├── static
 ├── templates
 └── app.py
+
+
+## Testing
+
+Run:
+
+python -m unittest
+
+
+## Future Improvements
+
+- Weather API integration
+- Real-time soil sensor integration
+- Mobile application
+- Cloud deployment
+- Advanced deep learning models
+
+
+## Deployment
+
+The application can be deployed using Docker or cloud platforms.
